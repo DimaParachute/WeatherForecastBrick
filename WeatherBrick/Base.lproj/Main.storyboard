@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherBrick" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_background" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-dA-w22">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moscow, Russia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2s-DM-Sij">
+                                <rect key="frame" x="143.5" y="741" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9J-B2-riL">
+                                <rect key="frame" x="15" y="619" width="91" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7q-DD-6dq">
+                                <rect key="frame" x="15" y="511" width="118" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search" translatesAutoresizingMaskIntoConstraints="NO" id="QAq-pz-fBe">
+                                <rect key="frame" x="275.5" y="746" width="16" height="16"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_location" translatesAutoresizingMaskIntoConstraints="NO" id="Fjs-Kz-OJj">
+                                <rect key="frame" x="122.5" y="746" width="16" height="16"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_stone_normal" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-kx-3GS">
+                                <rect key="frame" x="95" y="0.0" width="224" height="455"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f9J-B2-riL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="5DJ-wa-9O6"/>
+                            <constraint firstItem="ZLf-dA-w22" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7yZ-Bx-sWc"/>
+                            <constraint firstItem="QAq-pz-fBe" firstAttribute="leading" secondItem="h2s-DM-Sij" secondAttribute="trailing" constant="5" id="DsB-YV-Nvo"/>
+                            <constraint firstItem="x7q-DD-6dq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="X6w-ec-7e8"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="QAq-pz-fBe" secondAttribute="bottom" constant="100" id="bPS-eB-zPb"/>
+                            <constraint firstItem="h2s-DM-Sij" firstAttribute="leading" secondItem="Fjs-Kz-OJj" secondAttribute="trailing" constant="5" id="c7n-az-8YY"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Fjs-Kz-OJj" secondAttribute="bottom" constant="100" id="ckD-1w-Xo9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f9J-B2-riL" secondAttribute="bottom" constant="200" id="fPK-FA-ecf"/>
+                            <constraint firstItem="YJd-kx-3GS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="75" id="gE6-2d-5TN"/>
+                            <constraint firstItem="ZLf-dA-w22" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gNL-Xe-7fF"/>
+                            <constraint firstAttribute="trailing" secondItem="ZLf-dA-w22" secondAttribute="trailing" id="iJa-qZ-TUx"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="h2s-DM-Sij" secondAttribute="bottom" constant="100" id="imB-p6-Iu7"/>
+                            <constraint firstItem="h2s-DM-Sij" firstAttribute="centerX" secondItem="ZLf-dA-w22" secondAttribute="centerX" id="jgb-99-ofE"/>
+                            <constraint firstAttribute="bottom" secondItem="ZLf-dA-w22" secondAttribute="bottom" id="q1v-SN-TK4"/>
+                            <constraint firstItem="YJd-kx-3GS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ud8-OA-0Uc"/>
+                            <constraint firstItem="f9J-B2-riL" firstAttribute="top" secondItem="x7q-DD-6dq" secondAttribute="bottom" constant="8" id="v24-EL-N7i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countryAndCityNameLabel" destination="h2s-DM-Sij" id="I6p-F6-5rn"/>
+                        <outlet property="temperatureLabel" destination="x7q-DD-6dq" id="Cw8-BI-y7y"/>
+                        <outlet property="weatherBrickImageView" destination="YJd-kx-3GS" id="sZY-hY-GIg"/>
+                        <outlet property="weatherDescriptionLabel" destination="f9J-B2-riL" id="lrj-KF-8LU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_location" width="16" height="16"/>
+        <image name="icon_search" width="16" height="16"/>
+        <image name="image_background" width="375" height="811"/>
+        <image name="image_stone_normal" width="224" height="455"/>
+    </resources>
+</document>
