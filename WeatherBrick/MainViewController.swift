@@ -5,8 +5,9 @@
 
 import UIKit
 import CoreLocation
+import SnapKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     @IBOutlet weak var countryAndCityNameLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -14,10 +15,16 @@ class ViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var weatherData = WeatherData()
+    var infoBlockView = InfoBlockView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         startLocationManager()
+        view.addSubview(infoBlockView)
+        infoBlockView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        infoBlockView.infoBlockHideButton.addTarget(self, action: #selector(infoBlockHideButtonTouched), for: .touchUpInside)
     }
     
     func startLocationManager() {
@@ -41,7 +48,7 @@ class ViewController: UIViewController {
             weatherBrickImageView.alpha = 0.5
         }
         if weatherData.wind.speed >= 5.5 {
-            weatherBrickImageView.transform = weatherBrickImageView.transform.rotated(by: .pi / 8)
+            weatherBrickImageView.transform = weatherBrickImageView.transform.rotated(by: .pi / 12)
         }
         if weatherData.main.temp >= 20.0 {
             weatherBrickImageView.image = UIImage(named: "image_stone_cracks")
@@ -69,9 +76,17 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
+    
+    @IBAction func infoButtonTouched(_ sender: UIButton) {
+        infoBlockView.isHidden = false
+    }
+    
+    @objc func infoBlockHideButtonTouched(_ sender: UIButton) {
+        infoBlockView.isHidden = true
+    }
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last {
             updateWeatherInfo(latitude: lastLocation.coordinate.latitude, longtitude: lastLocation.coordinate.longitude)

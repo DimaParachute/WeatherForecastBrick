@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherBrick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="WeatherBrick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_stone_normal" translatesAutoresizingMaskIntoConstraints="NO" id="YJd-kx-3GS">
                                 <rect key="frame" x="95" y="0.0" width="224" height="455"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-7n-cyg">
+                                <rect key="frame" x="119.5" y="811" width="175" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="H1J-Gp-PxE"/>
+                                    <constraint firstAttribute="width" constant="175" id="LWa-DD-usq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="INFO">
+                                    <color key="baseBackgroundColor" red="1" green="0.60389232640000001" blue="0.3765183091" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="infoButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOf-4m-8Wb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,8 +78,10 @@
                             <constraint firstAttribute="bottomMargin" secondItem="h2s-DM-Sij" secondAttribute="bottom" constant="100" id="imB-p6-Iu7"/>
                             <constraint firstItem="h2s-DM-Sij" firstAttribute="centerX" secondItem="ZLf-dA-w22" secondAttribute="centerX" id="jgb-99-ofE"/>
                             <constraint firstAttribute="bottom" secondItem="ZLf-dA-w22" secondAttribute="bottom" id="q1v-SN-TK4"/>
+                            <constraint firstAttribute="bottom" secondItem="4fV-7n-cyg" secondAttribute="bottom" id="qgh-Nz-5vd"/>
                             <constraint firstItem="YJd-kx-3GS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ud8-OA-0Uc"/>
                             <constraint firstItem="f9J-B2-riL" firstAttribute="top" secondItem="x7q-DD-6dq" secondAttribute="bottom" constant="8" id="v24-EL-N7i"/>
+                            <constraint firstItem="4fV-7n-cyg" firstAttribute="centerX" secondItem="ZLf-dA-w22" secondAttribute="centerX" id="z0r-JC-qpi"/>
                         </constraints>
                     </view>
                     <connections>
