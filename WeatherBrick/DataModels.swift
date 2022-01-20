@@ -23,6 +23,10 @@ struct Main: Codable {
 
 struct Sys: Codable {
     var country: String = ""
+    var fullCountryName: String? {
+        let current = Locale(identifier: "en-US")
+        return current.localizedString(forRegionCode: country)
+    }
 }
 
 struct Wind: Codable {

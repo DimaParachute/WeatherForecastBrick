@@ -48,7 +48,7 @@ class InfoBlockView: UIView {
     private func titleInitialize() {
         let titleLabel = UILabel()
         titleLabel.text = "INFO"
-        titleLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
+        titleLabel.font = .systemFont(ofSize: 30, weight: .semibold)
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -59,7 +59,7 @@ class InfoBlockView: UIView {
     private func wetConditionLabelInitialize() {
         let wetConditionLabel = UILabel()
         wetConditionLabel.text = "Brick is wet - raining"
-        wetConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        wetConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(wetConditionLabel)
         wetConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -70,7 +70,7 @@ class InfoBlockView: UIView {
     private func dryConditionLabelInitialize() {
         let dryConditionLabel = UILabel()
         dryConditionLabel.text = "Brick is dry - sunny"
-        dryConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        dryConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(dryConditionLabel)
         dryConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -81,7 +81,7 @@ class InfoBlockView: UIView {
     private func hardToSeeConditionLabelInitialize() {
         let hardToSeeConditionLabel = UILabel()
         hardToSeeConditionLabel.text = "Brick is hard to see - fog"
-        hardToSeeConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        hardToSeeConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(hardToSeeConditionLabel)
         hardToSeeConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -92,7 +92,7 @@ class InfoBlockView: UIView {
     private func cracksConditionLabelInitialize() {
         let cracksConditionLabel = UILabel()
         cracksConditionLabel.text = "Brick with cracks - very hot"
-        cracksConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        cracksConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(cracksConditionLabel)
         cracksConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -103,7 +103,7 @@ class InfoBlockView: UIView {
     private func snowConditionLabelInitialize() {
         let snowConditionLabel = UILabel()
         snowConditionLabel.text = "Brick with snow - snow"
-        snowConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        snowConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(snowConditionLabel)
         snowConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -114,7 +114,7 @@ class InfoBlockView: UIView {
     private func swingingConditionLabelInitialize() {
         let swingingConditionLabel = UILabel()
         swingingConditionLabel.text = "Brick is swinging - windy"
-        swingingConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        swingingConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(swingingConditionLabel)
         swingingConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -125,7 +125,7 @@ class InfoBlockView: UIView {
     private func goneConditionLabelInitialize() {
         let goneConditionLabel = UILabel()
         goneConditionLabel.text = "Brick is gone - No internet"
-        goneConditionLabel.font = UIFont.systemFont(ofSize: conditionLabelsDefaultSize)
+        goneConditionLabel.font = .systemFont(ofSize: conditionLabelsDefaultSize)
         self.addSubview(goneConditionLabel)
         goneConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(10)
@@ -137,8 +137,8 @@ class InfoBlockView: UIView {
         let button = UIButton()
         button.setTitle("Hide", for: .normal)
         button.setTitleColor(UIColor.systemGray, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
-        button.layer.borderColor = (UIColor.systemGray).cgColor
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
+        button.layer.borderColor = UIColor.systemGray.cgColor
         button.layer.borderWidth = 1
         button.layer.cornerRadius = 15
         button.backgroundColor = .clear
