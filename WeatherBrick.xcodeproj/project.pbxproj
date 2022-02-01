@@ -11,6 +11,8 @@
 		4C1AA640B358D09017A148E2 /* Pods_WeatherBrick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16E2F72C33937D1C08D0375 /* Pods_WeatherBrick.framework */; };
 		6F3F2AA3278B0CFD009D9E95 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3F2AA2278B0CFD009D9E95 /* DataModels.swift */; };
 		6F3F2AA5278C4222009D9E95 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3F2AA4278C4221009D9E95 /* DataSource.swift */; };
+		6F486C4327A8124B009651CC /* WeatherInfoUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F486C4227A8124B009651CC /* WeatherInfoUpdater.swift */; };
+		6F486C4627A81497009651CC /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F486C4527A81497009651CC /* Styles.swift */; };
 		6F8140DF2792E83D006C7A3C /* PullTheBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8140DE2792E83D006C7A3C /* PullTheBrick.swift */; };
 		6FADA0B6279038F7001A9B44 /* InfoBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FADA0B5279038F7001A9B44 /* InfoBlockView.swift */; };
 		6FADA0BA2792E2BE001A9B44 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FADA0B92792E2BE001A9B44 /* LocationManager.swift */; };
@@ -49,6 +51,8 @@
 		05CA41CC87BFD854DF425328 /* Pods-WeatherBrickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherBrickTests.debug.xcconfig"; path = "Target Support Files/Pods-WeatherBrickTests/Pods-WeatherBrickTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F3F2AA2278B0CFD009D9E95 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
 		6F3F2AA4278C4221009D9E95 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		6F486C4227A8124B009651CC /* WeatherInfoUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoUpdater.swift; sourceTree = "<group>"; };
+		6F486C4527A81497009651CC /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		6F8140DE2792E83D006C7A3C /* PullTheBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullTheBrick.swift; sourceTree = "<group>"; };
 		6FADA0B5279038F7001A9B44 /* InfoBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBlockView.swift; sourceTree = "<group>"; };
 		6FADA0B92792E2BE001A9B44 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -128,11 +132,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6F486C4427A81484009651CC /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6F486C4527A81497009651CC /* Styles.swift */,
+			);
+			name = Styles;
+			sourceTree = "<group>";
+		};
 		6F8140E02792E849006C7A3C /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
 				6FADA0B92792E2BE001A9B44 /* LocationManager.swift */,
 				6F8140DE2792E83D006C7A3C /* PullTheBrick.swift */,
+				6F486C4227A8124B009651CC /* WeatherInfoUpdater.swift */,
 			);
 			name = MainViewController;
 			sourceTree = "<group>";
@@ -200,6 +213,7 @@
 				6FADA0B4278F0531001A9B44 /* Controllers */,
 				6F81C829278EE5DD006F1D12 /* Views */,
 				6F81C828278EE5C3006F1D12 /* Models */,
+				6F486C4427A81484009651CC /* Styles */,
 				A3ACF2E4273847C600CEE97C /* Resources */,
 				A3ACF2DE27383B7400CEE97C /* Supporting Files */,
 			);
@@ -412,7 +426,7 @@
 		};
 		6F3F2AA6278D7427009D9E95 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -423,13 +437,13 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 		83E6C65EB0C3C6ADE3AE932C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -451,7 +465,7 @@
 		};
 		A3ACF2E5273848AB00CEE97C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -469,7 +483,7 @@
 		};
 		B084477B8C2CCA1418ACA72C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -535,10 +549,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F486C4627A81497009651CC /* Styles.swift in Sources */,
 				6F8140DF2792E83D006C7A3C /* PullTheBrick.swift in Sources */,
 				6F3F2AA3278B0CFD009D9E95 /* DataModels.swift in Sources */,
 				A3475F01273305F200BF5E86 /* MainViewController.swift in Sources */,
 				6FADA0BA2792E2BE001A9B44 /* LocationManager.swift in Sources */,
+				6F486C4327A8124B009651CC /* WeatherInfoUpdater.swift in Sources */,
 				6F3F2AA5278C4222009D9E95 /* DataSource.swift in Sources */,
 				6FADA0B6279038F7001A9B44 /* InfoBlockView.swift in Sources */,
 				A3475EFF273305F200BF5E86 /* AppDelegate.swift in Sources */,

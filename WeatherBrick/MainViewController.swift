@@ -8,6 +8,8 @@ import CoreLocation
 import SnapKit
 
 class MainViewController: UIViewController {
+    
+    //MARK: - IBOutlets
     @IBOutlet weak var countryAndCityNameLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -17,13 +19,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var brickPullingSuperView: UIView!
     
+    //MARK: - Class instances
     let locationManager = CLLocationManager()
     var weatherData = WeatherData()
     var infoBlockView = InfoBlockView()
     let weatherUpdatingActivityIndicator = UIActivityIndicatorView()
     
+    //MARK: - Standard values
+    private let highestPointOfNormalTemperature = 19.9
+    private let highestPointOfNormalWind = 7.9
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        weatherUpdatingActivityIndicator.accessibilityIdentifier = "weatherUpdatingActivityIndicator"
         weatherUpdatingActivityIndicatorInitialize()
         brickPullingSuperView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
         startLocationManager()
@@ -38,40 +46,20 @@ class MainViewController: UIViewController {
         countryAndCityNameLabel.text = "\(weatherData.name), \(weatherData.sys.fullCountryName ?? "")"
         weatherDescriptionLabel.text = weatherData.weather[0].main
         temperatureLabel.text = Int(weatherData.main.temp).description + "°"
-        weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherDescriptionLabel.text!]!)
+        weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherData.weather[0].main]!)
         if weatherDescriptionLabel.text == "Atmosphere" {
             weatherDescriptionLabel.text = "Poor visibility"
             weatherBrickImageView.alpha = 0.5
         }
-        if weatherData.wind.speed >= 8.0 {
-            weatherBrickImageView.transform = weatherBrickImageView.transform.rotated(by: .pi / 12)
+        if weatherData.wind.speed > highestPointOfNormalWind {
+                weatherBrickImageView.transform = CGAffineTransform(rotationAngle: .pi / 12)
+        } else {
+                weatherBrickImageView.transform = CGAffineTransform.identity
         }
-        if weatherData.main.temp >= 20.0 {
+
+        if weatherData.main.temp > highestPointOfNormalTemperature {
             weatherBrickImageView.image = UIImage(named: "image_stone_cracks")
         }
-    }
-    
-    func updateWeatherInfo(latitude: Double, longtitude: Double) {
-        weatherUpdatingActivityIndicator.isHidden = false
-        weatherUpdatingActivityIndicator.startAnimating()
-        let session = URLSession.shared
-        let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude.description)&lon=\(longtitude.description)&units=metric&appid=02dd91fbf1b01a29b1b1a226c644bed9")!
-        let task = session.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                print("DataTask error: \(error!.localizedDescription)")
-                self.weatherBrickImageView.isHidden = true
-                return
-            }
-            do {
-                self.weatherData = try JSONDecoder().decode(WeatherData.self, from: data!)
-                DispatchQueue.main.async {
-                    self.updateView()
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        task.resume()
     }
     
     @IBAction func infoButtonTouched(_ sender: UIButton) {
