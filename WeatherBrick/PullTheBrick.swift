@@ -20,7 +20,9 @@ extension MainViewController {
             recognizer.setTranslation(CGPoint.zero, in: self.view)
         } else if recognizer.state == .ended {
             brickPullingSuperView.center.y = brickStartingPosition
-            updateWeatherInfo(latitude: (locationManager.location?.coordinate.latitude)!, longtitude: (locationManager.location?.coordinate.longitude)!)
+            weatherUpdatingActivityIndicator.isHidden = false
+            weatherUpdatingActivityIndicator.startAnimating()
+            weatherInfo.updateWeatherInfo(latitude: (locationManager.location?.coordinate.latitude)!, longtitude: (locationManager.location?.coordinate.longitude)!, completion: updateView)
         }
     }
 }

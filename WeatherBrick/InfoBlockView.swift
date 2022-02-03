@@ -58,7 +58,7 @@ class InfoBlockView: UIView {
     
     private func wetConditionLabelInitialize() {
         let wetConditionLabel = UILabel()
-        wetConditionLabel.text = "Brick is wet - raining"
+        wetConditionLabel.text = DataSource.BrickState.raining.rawValue
         wetConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(wetConditionLabel)
         wetConditionLabel.snp.makeConstraints { make in
@@ -69,7 +69,7 @@ class InfoBlockView: UIView {
     
     private func dryConditionLabelInitialize() {
         let dryConditionLabel = UILabel()
-        dryConditionLabel.text = "Brick is dry - sunny"
+        dryConditionLabel.text = DataSource.BrickState.sunny.rawValue
         dryConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(dryConditionLabel)
         dryConditionLabel.snp.makeConstraints { make in
@@ -80,7 +80,7 @@ class InfoBlockView: UIView {
     
     private func hardToSeeConditionLabelInitialize() {
         let hardToSeeConditionLabel = UILabel()
-        hardToSeeConditionLabel.text = "Brick is hard to see - fog"
+        hardToSeeConditionLabel.text = DataSource.BrickState.fog.rawValue
         hardToSeeConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(hardToSeeConditionLabel)
         hardToSeeConditionLabel.snp.makeConstraints { make in
@@ -91,7 +91,7 @@ class InfoBlockView: UIView {
     
     private func cracksConditionLabelInitialize() {
         let cracksConditionLabel = UILabel()
-        cracksConditionLabel.text = "Brick with cracks - very hot"
+        cracksConditionLabel.text = DataSource.BrickState.hot.rawValue
         cracksConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(cracksConditionLabel)
         cracksConditionLabel.snp.makeConstraints { make in
@@ -102,7 +102,7 @@ class InfoBlockView: UIView {
     
     private func snowConditionLabelInitialize() {
         let snowConditionLabel = UILabel()
-        snowConditionLabel.text = "Brick with snow - snow"
+        snowConditionLabel.text = DataSource.BrickState.snow.rawValue
         snowConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(snowConditionLabel)
         snowConditionLabel.snp.makeConstraints { make in
@@ -113,7 +113,7 @@ class InfoBlockView: UIView {
     
     private func swingingConditionLabelInitialize() {
         let swingingConditionLabel = UILabel()
-        swingingConditionLabel.text = "Brick is swinging - windy"
+        swingingConditionLabel.text = DataSource.BrickState.windy.rawValue
         swingingConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(swingingConditionLabel)
         swingingConditionLabel.snp.makeConstraints { make in
@@ -124,7 +124,7 @@ class InfoBlockView: UIView {
     
     private func goneConditionLabelInitialize() {
         let goneConditionLabel = UILabel()
-        goneConditionLabel.text = "Brick is gone - No internet"
+        goneConditionLabel.text = DataSource.BrickState.undefined.rawValue
         goneConditionLabel.font = .systemFont(ofSize: styles.conditionLabelsDefaultSize)
         self.addSubview(goneConditionLabel)
         goneConditionLabel.snp.makeConstraints { make in

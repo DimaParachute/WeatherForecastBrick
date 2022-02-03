@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Class instances
     let locationManager = CLLocationManager()
-    var weatherData = WeatherData()
+    let weatherInfo = WeatherInfo.sharedInstance()
     var infoBlockView = InfoBlockView()
     let weatherUpdatingActivityIndicator = UIActivityIndicatorView()
     
@@ -43,21 +43,25 @@ class MainViewController: UIViewController {
     func updateView() {
         weatherUpdatingActivityIndicator.stopAnimating()
         weatherUpdatingActivityIndicator.isHidden = true
-        countryAndCityNameLabel.text = "\(weatherData.name), \(weatherData.sys.fullCountryName ?? "")"
-        weatherDescriptionLabel.text = weatherData.weather[0].main
-        temperatureLabel.text = Int(weatherData.main.temp).description + "°"
-        weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherData.weather[0].main]!)
+        guard weatherInfo.noInternet == false else {
+            self.weatherBrickImageView.isHidden = true
+            return
+        }
+        countryAndCityNameLabel.text = weatherInfo.cityAndCountry
+        weatherDescriptionLabel.text = weatherInfo.status
+        temperatureLabel.text = Int(weatherInfo.temperature).description + "°"
+        weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherInfo.status]!)
         if weatherDescriptionLabel.text == "Atmosphere" {
             weatherDescriptionLabel.text = "Poor visibility"
             weatherBrickImageView.alpha = 0.5
         }
-        if weatherData.wind.speed > highestPointOfNormalWind {
+        if weatherInfo.windSpeed > highestPointOfNormalWind {
                 weatherBrickImageView.transform = CGAffineTransform(rotationAngle: .pi / 12)
         } else {
                 weatherBrickImageView.transform = CGAffineTransform.identity
         }
 
-        if weatherData.main.temp > highestPointOfNormalTemperature {
+        if weatherInfo.temperature > highestPointOfNormalTemperature {
             weatherBrickImageView.image = UIImage(named: "image_stone_cracks")
         }
     }

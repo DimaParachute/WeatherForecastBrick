@@ -33,7 +33,7 @@ struct Wind: Codable {
     var speed: Double = 0.0
 }
 
-struct WeatherData: Codable {
+class WeatherData: Codable {
     var weather: [Weather] = []
     var main: Main = Main()
     var sys: Sys = Sys()

@@ -12,7 +12,9 @@ import CoreLocation
 extension MainViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let lastLocation = locations.last {
-            updateWeatherInfo(latitude: lastLocation.coordinate.latitude, longtitude: lastLocation.coordinate.longitude)
+            weatherUpdatingActivityIndicator.isHidden = false
+            weatherUpdatingActivityIndicator.startAnimating()
+            weatherInfo.updateWeatherInfo(latitude: lastLocation.coordinate.latitude, longtitude: lastLocation.coordinate.longitude, completion: updateView)
         }
     }
     

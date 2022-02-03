@@ -18,4 +18,14 @@ struct DataSource {
         "Clear": "image_stone_normal",
         "Clouds": "image_stone_normal"
     ]
+    
+    enum BrickState: String {
+        case raining = "Brick is wet - raining",
+        sunny = "Brick is dry - sunny",
+        fog = "Brick is hard to see - fog",
+        hot = "Brick with cracks - very hot",
+        snow = "Brick with snow - snow",
+        windy = "Brick is swinging - windy",
+        undefined = "Brick is gone - No internet"
+    }
 }
