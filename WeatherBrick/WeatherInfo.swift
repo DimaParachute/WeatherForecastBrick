@@ -25,6 +25,7 @@ class WeatherInfo {
     lazy var cityAndCountry = "\(weatherData.name), \(weatherData.sys.fullCountryName ?? "")"
     lazy var status = weatherData.weather[0].main
     lazy var temperature = weatherData.main.temp
+    lazy var stringTemperature = Int(temperature).description + "°"
     lazy var windSpeed = weatherData.wind.speed
     
     func updateWeatherInfo(latitude: Double, longtitude: Double, completion: (() -> Void)? = nil) {

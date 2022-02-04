@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         }
         countryAndCityNameLabel.text = weatherInfo.cityAndCountry
         weatherDescriptionLabel.text = weatherInfo.status
-        temperatureLabel.text = Int(weatherInfo.temperature).description + "°"
+        temperatureLabel.text = weatherInfo.stringTemperature
         weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherInfo.status]!)
         if weatherDescriptionLabel.text == "Atmosphere" {
             weatherDescriptionLabel.text = "Poor visibility"

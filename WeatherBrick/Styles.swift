@@ -9,7 +9,5 @@
 import Foundation
 import UIKit
 
-struct Styles {
-    let constraintToLeftBorderForNormalTextInInfoBlock = 10
-    let conditionLabelsDefaultSize: CGFloat = 20
+enum Styles {
 }

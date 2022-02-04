@@ -16,6 +16,8 @@
 		6F8140DF2792E83D006C7A3C /* PullTheBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8140DE2792E83D006C7A3C /* PullTheBrick.swift */; };
 		6FADA0B6279038F7001A9B44 /* InfoBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FADA0B5279038F7001A9B44 /* InfoBlockView.swift */; };
 		6FADA0BA2792E2BE001A9B44 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FADA0B92792E2BE001A9B44 /* LocationManager.swift */; };
+		6FB2B75D27AD6458009805D3 /* Layot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB2B75C27AD6458009805D3 /* Layot.swift */; };
+		6FB2B76027AD671F009805D3 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB2B75F27AD671F009805D3 /* Fonts.swift */; };
 		9492139A098EB6A4A7AA9E0C /* Pods_WeatherBrickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77C23DB49A603179561BF78F /* Pods_WeatherBrickTests.framework */; };
 		A3475EFF273305F200BF5E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3475EFE273305F200BF5E86 /* AppDelegate.swift */; };
 		A3475F01273305F200BF5E86 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3475F00273305F200BF5E86 /* MainViewController.swift */; };
@@ -56,6 +58,8 @@
 		6F8140DE2792E83D006C7A3C /* PullTheBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullTheBrick.swift; sourceTree = "<group>"; };
 		6FADA0B5279038F7001A9B44 /* InfoBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBlockView.swift; sourceTree = "<group>"; };
 		6FADA0B92792E2BE001A9B44 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		6FB2B75C27AD6458009805D3 /* Layot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layot.swift; sourceTree = "<group>"; };
+		6FB2B75F27AD671F009805D3 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		77C23DB49A603179561BF78F /* Pods_WeatherBrickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherBrickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CBF5CA8788357C9387CBB51 /* Pods_WeatherBrick_WeatherBrickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherBrick_WeatherBrickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3475EFB273305F200BF5E86 /* WeatherBrick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherBrick.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,9 +183,19 @@
 		6FADA0B82792DCBB001A9B44 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				6FB2B75E27AD6462009805D3 /* Styles */,
 				6F8140E02792E849006C7A3C /* MainViewController */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		6FB2B75E27AD6462009805D3 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				6FB2B75C27AD6458009805D3 /* Layot.swift */,
+				6FB2B75F27AD671F009805D3 /* Fonts.swift */,
+			);
+			name = Styles;
 			sourceTree = "<group>";
 		};
 		A3475EF2273305F200BF5E86 = {
@@ -556,6 +570,8 @@
 				6F3C903A27A9755A005C8163 /* WeatherInfo.swift in Sources */,
 				6FADA0BA2792E2BE001A9B44 /* LocationManager.swift in Sources */,
 				6F3F2AA5278C4222009D9E95 /* DataSource.swift in Sources */,
+				6FB2B75D27AD6458009805D3 /* Layot.swift in Sources */,
+				6FB2B76027AD671F009805D3 /* Fonts.swift in Sources */,
 				6FADA0B6279038F7001A9B44 /* InfoBlockView.swift in Sources */,
 				A3475EFF273305F200BF5E86 /* AppDelegate.swift in Sources */,
 			);
