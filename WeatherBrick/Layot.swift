@@ -14,6 +14,17 @@ extension Styles {
         static var brickStartingPosition: CGFloat {
             return 227.5
         }
+        static var brickRotationAngle: Double {
+            return Double.pi / 12.0
+        }
+        enum HideButton {
+            static var buttonBorderWidth: CGFloat {
+                return 1
+            }
+            static var buttonCornerRadius: CGFloat {
+                return 15
+            }
+        }
         enum Constraints {
             enum Left {
                 static func defaultValue() -> Int {

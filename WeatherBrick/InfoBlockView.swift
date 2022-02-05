@@ -138,8 +138,8 @@ class InfoBlockView: UIView {
         button.setTitleColor(UIColor.systemGray, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .semibold)
         button.layer.borderColor = UIColor.systemGray.cgColor
-        button.layer.borderWidth = 1
-        button.layer.cornerRadius = 15
+        button.layer.borderWidth = Styles.Layot.HideButton.buttonBorderWidth
+        button.layer.cornerRadius = Styles.Layot.HideButton.buttonCornerRadius
         button.backgroundColor = .clear
         return button
     }()

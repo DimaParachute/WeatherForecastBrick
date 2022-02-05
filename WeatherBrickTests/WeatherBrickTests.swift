@@ -7,11 +7,9 @@ import XCTest
 @testable import WeatherBrick
 
 class WeatherBrickTests: XCTestCase {
-    let mainViewController = MainViewController()
-    
     func testPerformance() {
         measure {
-            mainViewController.startLocationManager()
+            WeatherInfo.sharedInstance().updateWeatherInfo(latitude: 55.7522, longtitude: 37.6156)
         }
     }
 }

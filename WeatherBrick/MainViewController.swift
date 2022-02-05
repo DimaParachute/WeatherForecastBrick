@@ -8,8 +8,7 @@ import CoreLocation
 import SnapKit
 
 class MainViewController: UIViewController {
-    
-    //MARK: - IBOutlets
+    // MARK: - IBOutlets
     @IBOutlet weak var countryAndCityNameLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -19,15 +18,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchImageView: UIImageView!
     @IBOutlet weak var brickPullingSuperView: UIView!
     
-    //MARK: - Class instances
+    // MARK: - Class instances
     let locationManager = CLLocationManager()
     let weatherInfo = WeatherInfo.sharedInstance()
     var infoBlockView = InfoBlockView()
     let weatherUpdatingActivityIndicator = UIActivityIndicatorView()
-    
-    //MARK: - Standard values
-    private let highestPointOfNormalTemperature = 19.9
-    private let highestPointOfNormalWind = 7.9
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +48,15 @@ class MainViewController: UIViewController {
         weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherInfo.status]!)
         if weatherDescriptionLabel.text == "Atmosphere" {
             weatherDescriptionLabel.text = "Poor visibility"
-            weatherBrickImageView.alpha = 0.5
+            weatherBrickImageView.alpha = Styles.brickAlphaWhenPoorVisibility
         }
-        if weatherInfo.windSpeed > highestPointOfNormalWind {
-                weatherBrickImageView.transform = CGAffineTransform(rotationAngle: .pi / 12)
+        if weatherInfo.windSpeed > Constants.highestPointOfNormalWind {
+            weatherBrickImageView.transform = CGAffineTransform(rotationAngle: Styles.Layot.brickRotationAngle)
         } else {
                 weatherBrickImageView.transform = CGAffineTransform.identity
         }
 
-        if weatherInfo.temperature > highestPointOfNormalTemperature {
+        if weatherInfo.temperature > Constants.highestPointOfNormalTemperature {
             weatherBrickImageView.image = UIImage(named: "image_stone_cracks")
         }
     }

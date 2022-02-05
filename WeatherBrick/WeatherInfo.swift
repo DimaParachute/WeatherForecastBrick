@@ -9,7 +9,6 @@
 import Foundation
 
 class WeatherInfo {
-    
     var weatherData = WeatherData()
     
     static var _sharedInstance: WeatherInfo?
@@ -49,5 +48,4 @@ class WeatherInfo {
         }
         task.resume()
     }
-    
 }

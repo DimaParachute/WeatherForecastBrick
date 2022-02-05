@@ -10,4 +10,7 @@ import Foundation
 import UIKit
 
 enum Styles {
+    static var brickAlphaWhenPoorVisibility: Double {
+        return 0.5
+    }
 }
