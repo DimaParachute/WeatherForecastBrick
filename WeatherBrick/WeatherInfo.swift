@@ -30,6 +30,8 @@ class WeatherInfo {
     func updateWeatherInfo(latitude: Double, longtitude: Double, completion: (() -> Void)? = nil) {
         let session = URLSession.shared
         let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude.description)&lon=\(longtitude.description)&units=metric&appid=02dd91fbf1b01a29b1b1a226c644bed9")!
+        print(latitude.description)
+        print(longtitude.description)
         let task = session.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 print("DataTask error: \(error!.localizedDescription)")
