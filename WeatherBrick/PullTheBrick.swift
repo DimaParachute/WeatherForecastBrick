@@ -18,7 +18,7 @@ extension MainViewController {
             brickPullingSuperView.center = CGPoint(x: brickPullingSuperView.center.x, y: newY)
             recognizer.setTranslation(CGPoint.zero, in: self.view)
         } else if recognizer.state == .ended {
-            brickPullingSuperView.center.y = Styles.Layot.brickStartingPosition
+            brickPullingSuperView.center.y = Styles.Layout.brickStartingPosition
             weatherUpdatingActivityIndicator.isHidden = false
             weatherUpdatingActivityIndicator.startAnimating()
             weatherInfo.updateWeatherInfo(latitude: (locationManager.location?.coordinate.latitude)!, longtitude: (locationManager.location?.coordinate.longitude)!, completion: updateView)

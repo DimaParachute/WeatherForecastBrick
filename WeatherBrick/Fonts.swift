@@ -11,8 +11,14 @@ import UIKit
 
 extension Styles {
     enum Fonts {
-        static var conditionLabelsDefaultSize: CGFloat {
-            return 20
+        static var conditionLabelsFont: UIFont {
+            return .systemFont(ofSize: 20)
+        }
+        static var infoBlockTitleFont: UIFont {
+            return .systemFont(ofSize: 30, weight: .semibold)
+        }
+        static var infoBlockHideButtonTitleFont: UIFont {
+            return .systemFont(ofSize: 15, weight: .semibold)
         }
     }
 }

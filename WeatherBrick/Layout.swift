@@ -10,18 +10,21 @@ import Foundation
 import UIKit
 
 extension Styles {
-    enum Layot {
+    enum Layout {
         static var brickStartingPosition: CGFloat {
             return 227.5
         }
         static var brickRotationAngle: Double {
             return Double.pi / 12.0
         }
-        enum HideButton {
+        static var infoBlockShadowOffset: CGSize {
+            return CGSize(width: 0, height: 8)
+        }
+        enum InfoBlock {
             static var buttonBorderWidth: CGFloat {
                 return 1
             }
-            static var buttonCornerRadius: CGFloat {
+            static var defaultCornerRadius: CGFloat {
                 return 15
             }
         }

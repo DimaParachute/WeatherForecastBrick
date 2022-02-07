@@ -16,6 +16,7 @@ disabled_rules:
   - unused_closure_parameter
   - convenience_type
   - identifier_name
+  - nesting
 
 opt_in_rules:
   - array_init

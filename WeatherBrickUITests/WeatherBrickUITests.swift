@@ -6,7 +6,6 @@
 import XCTest
 
 class WeatherBrickUITests: XCTestCase {
-    
     private let app = XCUIApplication()
     
     override func setUpWithError() throws {
@@ -23,5 +22,4 @@ class WeatherBrickUITests: XCTestCase {
         app.images["brickImage"].swipeDown()
         XCTAssertTrue(app.activityIndicators["weatherUpdatingActivityIndicator"].exists)
     }
-    
 }

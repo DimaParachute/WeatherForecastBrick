@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         weatherUpdatingActivityIndicator.accessibilityIdentifier = "weatherUpdatingActivityIndicator"
         weatherUpdatingActivityIndicatorInitialize()
-        brickPullingSuperView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        brickPullingSuperView.backgroundColor = Styles.Colors.brickPullingSuperViewColor
         startLocationManager()
         infoBlockViewInitialize()
         infoBlockView.infoBlockHideButton.addTarget(self, action: #selector(infoBlockHideButtonTouched), for: .touchUpInside)
@@ -51,9 +51,9 @@ class MainViewController: UIViewController {
             weatherBrickImageView.alpha = Styles.brickAlphaWhenPoorVisibility
         }
         if weatherInfo.windSpeed > Constants.highestPointOfNormalWind {
-            weatherBrickImageView.transform = CGAffineTransform(rotationAngle: Styles.Layot.brickRotationAngle)
+            weatherBrickImageView.transform = CGAffineTransform(rotationAngle: Styles.Layout.brickRotationAngle)
         } else {
-                weatherBrickImageView.transform = CGAffineTransform.identity
+            weatherBrickImageView.transform = CGAffineTransform.identity
         }
 
         if weatherInfo.temperature > Constants.highestPointOfNormalTemperature {

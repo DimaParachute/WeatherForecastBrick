@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 
 enum Styles {
-    static var brickAlphaWhenPoorVisibility: Double {
-        return 0.5
+    static let brickAlphaWhenPoorVisibility = 0.5
+    enum Shadow {
+        static var defaultShadowRadius: CGFloat {
+            return 15
+        }
+        static var defaultShadowOpacity: Float {
+            return 0.7
+        }
     }
 }
