@@ -24,15 +24,32 @@ extension Styles {
             static var buttonBorderWidth: CGFloat {
                 return 1
             }
+            static let buttonHeight = 31
+            static let buttonWidth = 115
             static var defaultCornerRadius: CGFloat {
                 return 15
             }
+            static let width = 300
+            static let height = 400
         }
         enum Constraints {
             enum Left {
                 static func defaultValue() -> Int {
                     return 10
                 }
+            }
+            enum Top {
+                static let title = 15
+                static let wet = 60
+                static let dry = 90
+                static let fog = 120
+                static let cracks = 150
+                static let snow = 180
+                static let swinging = 210
+                static let gone = 240
+            }
+            enum Bottom {
+                static let hideButton = 15
             }
         }
     }

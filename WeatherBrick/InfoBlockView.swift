@@ -28,8 +28,8 @@ class InfoBlockView: UIView {
         self.layer.shadowOffset = Styles.Layout.infoBlockShadowOffset
         self.layer.shadowRadius = Styles.Shadow.defaultShadowRadius
         self.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(400)
+            make.width.equalTo(Styles.Layout.InfoBlock.width)
+            make.height.equalTo(Styles.Layout.InfoBlock.height)
         }
         titleInitialize()
         wetConditionLabelInitialize()
@@ -49,7 +49,7 @@ class InfoBlockView: UIView {
         self.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(15)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.title)
         }
     }
     
@@ -60,7 +60,7 @@ class InfoBlockView: UIView {
         self.addSubview(wetConditionLabel)
         wetConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(60)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.wet)
         }
     }
     
@@ -71,7 +71,7 @@ class InfoBlockView: UIView {
         self.addSubview(dryConditionLabel)
         dryConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(90)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.dry)
         }
     }
     
@@ -82,7 +82,7 @@ class InfoBlockView: UIView {
         self.addSubview(hardToSeeConditionLabel)
         hardToSeeConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(120)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.fog)
         }
     }
     
@@ -93,7 +93,7 @@ class InfoBlockView: UIView {
         self.addSubview(cracksConditionLabel)
         cracksConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(150)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.cracks)
         }
     }
     
@@ -104,7 +104,7 @@ class InfoBlockView: UIView {
         self.addSubview(snowConditionLabel)
         snowConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(180)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.snow)
         }
     }
     
@@ -115,7 +115,7 @@ class InfoBlockView: UIView {
         self.addSubview(swingingConditionLabel)
         swingingConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(210)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.swinging)
         }
     }
     
@@ -126,7 +126,7 @@ class InfoBlockView: UIView {
         self.addSubview(goneConditionLabel)
         goneConditionLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(Styles.Layout.Constraints.Left.defaultValue())
-            make.top.equalToSuperview().inset(240)
+            make.top.equalToSuperview().inset(Styles.Layout.Constraints.Top.gone)
         }
     }
     
@@ -146,9 +146,9 @@ class InfoBlockView: UIView {
         self.addSubview(infoBlockHideButton)
         infoBlockHideButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(15)
-            make.height.equalTo(31)
-            make.width.equalTo(115)
+            make.bottom.equalToSuperview().inset(Styles.Layout.Constraints.Bottom.hideButton)
+            make.height.equalTo(Styles.Layout.InfoBlock.buttonHeight)
+            make.width.equalTo(Styles.Layout.InfoBlock.buttonWidth)
         }
     }
 }
