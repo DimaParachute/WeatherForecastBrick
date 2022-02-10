@@ -13,12 +13,9 @@ import XCTest
 class MainViewControllerTests: XCTestCase {
     var mainViewController: MainViewController!
     
-    override func setUp() {
-        super.setUp()
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        mainViewController = vc
-        _ = mainViewController.view
+    override func setUpWithError() throws {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
     }
     
     func testDefaultState() {

@@ -17,6 +17,8 @@ disabled_rules:
   - convenience_type
   - identifier_name
   - nesting
+  - implicitly_unwrapped_optional
+  - force_cast
 
 opt_in_rules:
   - array_init
