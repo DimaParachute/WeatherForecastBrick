@@ -12,10 +12,11 @@ target 'WeatherBrick' do
   target 'WeatherBrickTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SnapshotTesting', '~> 1.9.0'
   end
 
   target 'WeatherBrickUITests' do
-    # Pods for testing
+    
   end
 
 end
