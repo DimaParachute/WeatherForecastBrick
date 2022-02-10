@@ -11,14 +11,17 @@ import XCTest
 @testable import WeatherBrick
 
 class MainViewControllerTests: XCTestCase {
-    var mainViewController: MainViewController!
+    var sut: MainViewController!
     
     override func setUpWithError() throws {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController
+        sut = MainViewController.instantiate()
+    }
+    
+    override func tearDownWithError() throws {
+        sut = nil
     }
     
     func testDefaultState() {
-        assertSnapshot(matching: mainViewController, as: .image)
+        assertSnapshot(matching: sut, as: .image(on: .iPhoneXr))
     }
 }
