@@ -11,8 +11,26 @@ class WeatherBrickTests: XCTestCase {
     
     func compareTestResults() {
         XCTAssertEqual(weatherInfo.cityAndCountry, "Moscow, Russia")
-        XCTAssertNotEqual(weatherInfo.temperature, 0.0)
-        XCTAssertNotEqual(weatherInfo.windSpeed, 0.0)
+        XCTAssertNotEqual(weatherInfo.status, "noStatus")
+        XCTAssertNotEqual(weatherInfo.temperature, 999.0)
+        XCTAssertNotEqual(weatherInfo.windSpeed, 999.0)
+        XCTAssertNotEqual(weatherInfo.stringTemperature, "999°")
+        weatherInfo.status = "Thunderstorm"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_wet"))
+        weatherInfo.status = "Drizzle"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_wet"))
+        weatherInfo.status = "Rain"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_wet"))
+        weatherInfo.status = "Snow"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_snow"))
+        weatherInfo.status = "Atmosphere"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_normal"))
+        weatherInfo.status = "Clear"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_normal"))
+        weatherInfo.status = "Clouds"
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_normal"))
+        weatherInfo.temperature = 20.0
+        XCTAssertEqual(weatherInfo.image, UIImage(named: "image_stone_cracks"))
     }
     
     func testLocation() throws {

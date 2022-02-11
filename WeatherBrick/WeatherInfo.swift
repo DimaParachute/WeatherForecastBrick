@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class WeatherInfo {
     var weatherData = WeatherData()
@@ -26,6 +27,12 @@ class WeatherInfo {
     lazy var temperature = weatherData.main.temp
     lazy var stringTemperature = Int(temperature).description + "°"
     lazy var windSpeed = weatherData.wind.speed
+    var image: UIImage {
+        if temperature > Constants.highestPointOfNormalTemperature {
+            return UIImage(named: "image_stone_cracks")!
+        }
+        return UIImage(named: DataSource.brickImageNameByWeatherStatus[status]!)!
+    }
     
     func updateWeatherInfo(latitude: Double, longtitude: Double, completion: (() -> Void)? = nil) {
         let session = URLSession.shared
@@ -35,6 +42,9 @@ class WeatherInfo {
             guard error == nil else {
                 print("DataTask error: \(error!.localizedDescription)")
                 self.noInternet = true
+                self.status = "noStatus"
+                self.temperature = 999.0
+                self.windSpeed = 999.0
                 completion?()
                 return
             }

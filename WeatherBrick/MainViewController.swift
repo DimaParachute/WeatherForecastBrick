@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
         countryAndCityNameLabel.text = weatherInfo.cityAndCountry
         weatherDescriptionLabel.text = weatherInfo.status
         temperatureLabel.text = weatherInfo.stringTemperature
-        weatherBrickImageView.image = UIImage(named: DataSource.brickImageNameByWeatherStatus[weatherInfo.status]!)
+        weatherBrickImageView.image = weatherInfo.image
         if weatherDescriptionLabel.text == "Atmosphere" {
             weatherDescriptionLabel.text = "Poor visibility"
             weatherBrickImageView.alpha = Styles.brickAlphaWhenPoorVisibility
@@ -54,10 +54,6 @@ class MainViewController: UIViewController {
             weatherBrickImageView.transform = CGAffineTransform(rotationAngle: Styles.Layout.brickRotationAngle)
         } else {
             weatherBrickImageView.transform = CGAffineTransform.identity
-        }
-
-        if weatherInfo.temperature > Constants.highestPointOfNormalTemperature {
-            weatherBrickImageView.image = UIImage(named: "image_stone_cracks")
         }
     }
     
