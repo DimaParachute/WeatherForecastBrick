@@ -1,3 +1,3 @@
 # WeatherForecastBrick
 
-An application that shows current weather with OpenWeather API. Included UI, Unit, Snapshot tests.
+An application targeted on understanding of working with API, JSON, CoreLocation.
